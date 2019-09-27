@@ -33,14 +33,14 @@ public class Roma {
                         System.out.println("Tu respuesta es incorrecta"); 
 		}
                 String respuesta3;
-		System.out.println("¿En que epoca cayo el Imperio Romano");
+		System.out.println("¿En que epoca cayo el Imperio Romano?");
 		respuesta3 = keyboard.nextLine();
                 if (respuesta3.equals("Edad Media")) {
 			Audio.main("respuestacorrecta.wav");
                         System.out.println("Tu respuesta es correcta");
                         points++;
 		} else {
-			Audio.main("respuestacorrecta.wav");
+			Audio.main("respuestaincorrecta.wav");
                         System.out.println("Tu respuesta es incorrecta");
                 }
 		System.out.println("Tienes "+points+" puntos de tres posibles");
@@ -58,21 +58,21 @@ class Audio {
 	audioClip.open(audioStream);
 	audioClip.start();
 	try {
-	Thread.sleep(4000);
-	} catch (InterruptedException ex) {
-	ex.printStackTrace();
-	}	
+		Thread.sleep(4000);
+		} catch (InterruptedException ex) {
+			ex.printStackTrace();
+		}	
 	audioClip.close();	
 	audioStream.close();
-	} catch (UnsupportedAudioFileException ex) {
-		System.out.println("The specified audio file is not supported");
-		ex.printStackTrace();
-	} catch (LineUnavailableException ex) {
-                System.out.println("Audio line for playing back is unavailable");
-                ex.printStackTrace();
-	} catch (IOException ex) {
-                System.out.println("Error playing the audio file");
-                ex.printStackTrace();
+		} catch (UnsupportedAudioFileException ex) {
+			System.out.println("The specified audio file is not supported");
+			ex.printStackTrace();
+		} catch (LineUnavailableException ex) {
+                	System.out.println("Audio line for playing back is unavailable");
+                	ex.printStackTrace();
+		} catch (IOException ex) {
+                	System.out.println("Error playing the audio file");
+               		ex.printStackTrace();
 	}
     }
 }

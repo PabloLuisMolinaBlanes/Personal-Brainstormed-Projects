@@ -1,20 +1,20 @@
 import java.util.HashMap;
 public class BetteredEjercicio7 {
         static double currentIVA = 0.21; // (Current percentage of IVA)/100	
-	static int i;
-	static int numeroDeProductos;
+	static int mapCurrentCount;
+	static int numberOfProducts;
 	public static void main(String[] args) {
 	 HashMap<Integer, Double> priceAndProduct = new HashMap<Integer, Double>();
 		System.out.println("Please, specify the number of products");
-	        numeroDeProductos = Integer.parseInt(System.console().readLine());
-		for (i = 1; i <= numeroDeProductos; i++) {
-			priceAndProduct.put(i,0.0);
+	        numberOfProducts = Integer.parseInt(System.console().readLine());
+		for (mapCurrentCount = 1; mapCurrentCount <= numberOfProducts; mapCurrentCount++) {
+			priceAndProduct.put(mapCurrentCount,0.0);
 		}
 		System.out.println("Please, specify the price for all products");
-		double precioDeProductos;
-		for (i = 1; i <= numeroDeProductos; i++) {
-			precioDeProductos = Double.parseDouble(System.console().readLine());
-			priceAndProduct.put(i, precioDeProductos);
+		double productPrize;
+		for (mapCurrentCount = 1; mapCurrentCount <= numberOfProducts; mapCurrentCount++) {
+			productPrize = Double.parseDouble(System.console().readLine());
+			priceAndProduct.put(mapCurrentCount, productPrize);
 		}	
 	double baseImponible = Sum(priceAndProduct);
 	double iva = baseImponible * currentIVA;
